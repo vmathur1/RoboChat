@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const userInput = document.getElementById("user-input");
     const sendButton = document.getElementById("send-button");
     const API_TOKEN = "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"; // Replace with your actual API token
-
+    const API_URL = "https://api-inference.huggingface.co/models/microsoft/DialoGPT-medium";
 
     sendButton.addEventListener("click", async () => {
         const message = userInput.value.trim();
@@ -13,7 +13,8 @@ document.addEventListener("DOMContentLoaded", function () {
         userInput.value = ""; // Clear the input
 
         try {
-            const response = await fetch("https://api-inference.huggingface.co/models/microsoft/DialoGPT-medium", {
+            const response = await fetch(
+                `https://cors-anywhere.herokuapp.com/${API_URL}`, {
                 method: "POST",
                 headers: {
                     "Authorization": `Bearer ${API_TOKEN}`,
@@ -46,6 +47,3 @@ document.addEventListener("DOMContentLoaded", function () {
         chatContainer.scrollTop = chatContainer.scrollHeight;
     }
 });
-
-
-
