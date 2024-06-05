@@ -1,7 +1,9 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const chatContainer = document.getElementById("chat-container");
     const userInput = document.getElementById("user-input");
     const sendButton = document.getElementById("send-button");
+    const API_TOKEN = "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"; // Replace with your actual API token
+
 
     sendButton.addEventListener("click", async () => {
         const message = userInput.value.trim();
@@ -14,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const response = await fetch("https://api-inference.huggingface.co/models/microsoft/DialoGPT-medium", {
                 method: "POST",
                 headers: {
-                    "Authorization": "Bearer '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'",
+                    "Authorization": `Bearer ${API_TOKEN}`,
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({ inputs: message }),
@@ -44,3 +46,6 @@ document.addEventListener("DOMContentLoaded", function() {
         chatContainer.scrollTop = chatContainer.scrollHeight;
     }
 });
+
+
+
