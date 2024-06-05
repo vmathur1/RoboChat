@@ -1,0 +1,10 @@
+/* Overall styling: fonts, colors, layout */
+body {
+    font-family: Arial, sans-serif; /* Choose a modern, clean font */
+    background-color: #f4f4f4; /* Light background */
+}
+
+.colorful-section {
+    background-color: #e0f2f1; /* Soft blue-green for visual interest */
+}
+/* ... (Add more styles for headers, sections, images, etc.) */
